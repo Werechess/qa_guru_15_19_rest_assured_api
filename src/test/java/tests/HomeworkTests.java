@@ -3,6 +3,7 @@ package tests;
 import models.lombok.RequestUserModel;
 import models.lombok.ResponseCreateUserModel;
 import models.lombok.ResponseUpdateUserModel;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -15,6 +16,7 @@ import static specs.ResponseSpecs.responseSpec;
 class HomeworkTests {
 
     @Test
+    @Tag("homework")
     void checkUserExistsWithDelay() {
         given(requestSpec)
                 .when()
@@ -26,6 +28,7 @@ class HomeworkTests {
     }
 
     @Test
+    @Tag("homework")
     void checkUserWhenCreated() {
         RequestUserModel data = new RequestUserModel();
         data.setName("morpheus");
@@ -47,6 +50,7 @@ class HomeworkTests {
     }
 
     @Test
+    @Tag("homework")
     void checkUserWhenUpdatedWithPut() {
         RequestUserModel data = new RequestUserModel();
         data.setName("morpheus");
@@ -67,6 +71,7 @@ class HomeworkTests {
     }
 
     @Test
+    @Tag("homework")
     void checkUserWhenUpdatedWithPatch() {
         RequestUserModel data = new RequestUserModel();
         data.setName("morpheus");
@@ -87,6 +92,7 @@ class HomeworkTests {
     }
 
     @Test
+    @Tag("homework")
     void checkUserWhenDeleted() {
         given(requestSpec)
                 .when()

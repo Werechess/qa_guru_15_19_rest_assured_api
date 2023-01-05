@@ -33,6 +33,12 @@ tasks.withType(Test) {
     }
 }
 
+task homework(type: Test) {
+    useJUnitPlatform() {
+        includeTags "homework"
+    }
+}
+
 allure {
     report {
         version.set(allureVersion)
