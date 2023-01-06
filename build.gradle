@@ -8,13 +8,21 @@ repositories {
     mavenCentral()
 }
 
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
 def allureVersion = '2.20.1'
 
 dependencies {
     testImplementation(
+            'com.codeborne:selenide:6.11.0',
+            'com.github.javafaker:javafaker:1.0.2',
             'com.fasterxml.jackson.core:jackson-databind:2.14.1',
             'io.rest-assured:rest-assured:5.3.0',
             "io.qameta.allure:allure-rest-assured:$allureVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            'org.aeonbits.owner:owner:1.0.12',
             'org.assertj:assertj-core:3.23.1',
             'org.junit.jupiter:junit-jupiter:5.9.0',
             'org.slf4j:slf4j-simple:2.0.3'
